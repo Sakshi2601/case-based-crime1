@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crime Scene Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="scene-container">
+    <img src="assets/scene2.jpg" id="scene" alt="Crime Scene Background" />
+    <button id="startGameBtn" class="start-btn">Start Game</button>
+
+    <!-- Hotspots -->
+    <div class="hotspot" style="top: 90%; left: 40%;" onclick="triggerQuestion(0)"></div>
+    <div class="hotspot" style="top: 70%; left: 35%;" onclick="triggerQuestion(1)"></div>
+    <div class="hotspot" style="top: 25%; left: 70%;" onclick="triggerQuestion(2)"></div>
+    <div class="hotspot" style="top: 50%; left: 20%;" onclick="triggerQuestion(3)"></div>
+    <div class="hotspot" style="top: 80%; left: 50%;" onclick="triggerQuestion(4)"></div>
+  </div>
+
+  <!-- Question Modal -->
+  <div id="questionModal" class="modal">
+    <div class="modal-content">
+      <h2 id="questionText">Question appears here</h2>
+      <button class="option" onclick="submitAnswer(0)">Option 1</button>
+      <button class="option" onclick="submitAnswer(1)">Option 2</button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div id="resultBox">
+    <h2>Quiz Completed</h2>
+    <p id="finalScore">Score: 0/0</p>
+    <button onclick="nextLevel()">Next Level 🚀</button>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    window.onload = () => {
+      playBackgroundMusic('assets/sound.mp3');
+    };
+  </script>
+</body>
+</html>
